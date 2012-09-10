@@ -1,0 +1,73 @@
+# Setup a new rails project
+# 1.) Creates a project folder
+# 2.) Enters the project folder and creates an .rvmrc file
+# 3.) Installs latest rails
+# 4.) Rails new
+# 5.) Link to pow server
+
+function rnew() {
+  if [ $# -ne 1 ]
+  then
+    echo "Error! Application name expected."
+  else
+    mkdir "$1"; cd "$1";
+    rvm --rvmrc --create use `rvm current`@"$1";
+    gem install rails --no-rdoc --no-ri;
+    rails new ../"$1";
+    powder link;
+  fi
+}
+
+# Git
+function git-clean {
+  git status --porcelain | \egrep '^D' | \sed -E -e 's/^D *//' -e 's/ /\\ /g' -e 's/^|$/"/g'
+}
+
+# Creates a gemset/.rvmrc file named for the current folder
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin
+
+function rvmrc() {
+  if [ $# -ne 1 ]
+  then
+    rvm --rvmrc --create use `rvm current`@"${PWD##*/}";
+  else
+    rvm --rvmrc --create use `rvm current`@"$1";
+  fi
+}
+
+# DNS Records
+function dighost() { 
+  host $(dig $1 | grep ANSWER -C 1 | tail -n 1 | awk '{ print $5 }')
+}
+
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Add reminder to Reminders.app (OS X 10.8)
+function remind() {
+	local text
+	if [ -t 0 ]; then
+		text="$1" # argument
+	else
+		text=$(cat) # pipe
+	fi
+	osascript >/dev/null <<EOF
+tell application "Reminders"
+	tell the default list
+		make new reminder with properties {name:"$text"}
+	end tell
+end tell
+EOF
+}
+
+# Create a data URL from a file
+function dataurl() {
+	local mimeType=$(file -b --mime-type "$1")
+	if [[ $mimeType == text/* ]]; then
+		mimeType="${mimeType};charset=utf-8"
+	fi
+	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+}

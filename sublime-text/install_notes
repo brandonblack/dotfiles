@@ -1,0 +1,11 @@
+# Install Package Control (Press Control + ` in sublime)
+import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+
+# Setup Command Line
+sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/bin/subl
+
+# My Default Packages
+Prefixr - http://wbond.net/sublime_packages/prefixr
+Alignment - http://wbond.net/sublime_packages/alignment
+DetectSyntax - https://github.com/phillipkoebbe/DetectSyntax
+Fetch - http://net.tutsplus.com/articles/news/introducing-nettuts-fetch/
