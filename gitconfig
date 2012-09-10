@@ -1,0 +1,49 @@
+[core]
+  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+
+[user]
+  email = brandonmblack@gmail.com
+  name  = Brandon Black
+
+[github]
+  user = brandonblack
+
+[push]
+  default = tracking
+
+[color]
+  ui          = auto
+  interactive = auto
+
+[hub]
+  http-clone = false
+  protocol   = https
+
+[url "git://github.com/"]
+  insteadOf = gh:
+[url "git@github.com:"]
+  pushInsteadOf = "git://github.com/"
+[url "git@github.com:brandonblack/"]
+  insteadOf = bb:
+
+[alias]
+  gs   = git status
+  gp   = git push
+  gsp  = git svn dcommit
+  gd   = git diff
+  
+  ga   = git add
+  gai  = git add --interactive
+  
+  gri  = git rebase -i HEAD~5
+  gr   = git reset --hard HEAD~
+  grs  = git reset --soft HEAD~
+  
+  gup  = git fetch; git rebase origin/master
+  gpu  = git push origin HEAD:master
+  
+  gb   = git branch
+  gcb  = git checkout -b
+  gc   = git checkout
+  gcm  = git commit -m
+  gcam = git commit -am
