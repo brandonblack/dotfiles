@@ -20,6 +20,8 @@ function dighost() {
 }
 
 # Rails
+export RAILS_ENV='development'
+
 function rnew() {
   if [ $# -ne 1 ]
   then
