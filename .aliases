@@ -1,7 +1,8 @@
 # General
 alias oo="open ."
 alias home='cd ~' # the tilda is too hard to reach
-alias proj='cd /Users/brandonmblack/Google\ Drive/Projects'
+alias 10g='cd /Users/brandon/Google\ Drive/Projects/work/10gen'
+alias proj='cd /Users/brandon/Google\ Drive/Projects'
 alias h='history' # shortcut for history
 alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
