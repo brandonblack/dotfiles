@@ -12,7 +12,7 @@ require 'irb/ext/save-history'
 end
 
 # Wirble
-IRB.conf[:AUTO_INDENT] = truea
+IRB.conf[:AUTO_INDENT] = true
 if defined?(Wirble)
   Wirble.init
   Wirble.colorize
