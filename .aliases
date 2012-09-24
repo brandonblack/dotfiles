@@ -7,6 +7,8 @@ alias h='history' # shortcut for history
 alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
+alias stt='subl .'
+alias brews='brew list -1'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -38,6 +40,11 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
+# JRuby
+alias jrspec='jruby --debug -S rspec --debug'
+alias jprofile='jruby --profile.api -S rspec'
+alias jexec='jruby -S'
+
 # Rails
 alias r='rails'
 alias rs='rails s'
@@ -48,9 +55,6 @@ alias rdbm='rake db:migrate'
 alias rdbs='rake db:seed'
 alias rsp='rs -e production'
 alias rst='rs -e test'
-
-# Bundler
-alias bi="bundle install --without production"
 
 # Heroku
 alias hk='heroku'
@@ -69,3 +73,25 @@ alias plnk='powder link'
 alias ru='rvm use'
 alias rgu='rvm gemset use'
 alias rvmc='rvm current'
+
+# Git
+alias gs='git status'
+alias gp='git push'
+alias gsp='git svn dcommit'
+alias gd='git diff'
+
+alias ga='git add'
+alias gai='git add --interactive'
+
+alias gr='git rebase -i HEAD~5'
+alias gr='git reset --hard HEAD~'
+alias grs='git reset --soft HEAD~'
+
+alias gu='git fetch; git rebase origin/master'
+alias gpu='git push origin HEAD:master'
+
+alias gb='git branch'
+alias gcb='git checkout -b'
+alias gc='git checkout'
+alias gcm='git commit -m'
+alias gca='git commit -am'
