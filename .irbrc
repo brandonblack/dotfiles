@@ -60,7 +60,7 @@ def pbcopy(str)
   `echo "#{str}" | pbcopy`
   true
 end
-alias cp pbcopy
+alias cp pbcopy copy
 
 def cat(path)
   contents = File.read path.to_s
