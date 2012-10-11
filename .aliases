@@ -83,9 +83,9 @@ alias gd='git diff'
 alias ga='git add'
 alias gai='git add --interactive'
 
-alias gr='git rebase -i HEAD~5'
-alias gr='git reset --hard HEAD~'
+alias grb='git rebase -i HEAD~5'
 alias grs='git reset --soft HEAD~'
+alias grsh='git reset --hard HEAD~'
 
 alias gup='git fetch origin; git rebase origin/`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`'
 alias gpu='git push origin HEAD:master'
