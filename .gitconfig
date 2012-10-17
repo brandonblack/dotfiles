@@ -11,6 +11,9 @@
 [push]
   default = tracking
 
+[branch]
+  autosetuprebase = always
+
 [color]
   ui          = auto
   interactive = auto

@@ -75,23 +75,26 @@ alias rgu='rvm gemset use'
 alias rvmc='rvm current'
 
 # Git
+alias git=hub
 alias gs='git status'
 alias gp='git push'
 alias gsp='git svn dcommit'
 alias gd='git diff'
+alias gsl='git log --oneline --decorate'
 
-alias ga='git add'
+alias ga='git add -A .'
 alias gai='git add --interactive'
 
 alias grb='git rebase -i HEAD~5'
 alias grs='git reset --soft HEAD~'
 alias grsh='git reset --hard HEAD~'
 
+alias grbmaster='git rebase HEAD feature && git rebase HEAD @{-2}'
 alias gup='git fetch origin; git rebase origin/`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`'
 alias gpu='git push origin HEAD:master'
 
 alias gb='git branch'
 alias gcb='git checkout -b'
-alias gc='git checkout '
+alias gc='git checkout'
 alias gcm='git commit -m'
 alias gca='git commit -am'

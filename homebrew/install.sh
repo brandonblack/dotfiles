@@ -20,5 +20,6 @@ brew install nodejs
 brew install mysql
 brew install redis
 brew install mongodb
+brew install hub
 
 brew cleanup
