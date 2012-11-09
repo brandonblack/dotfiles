@@ -56,6 +56,9 @@ alias rdbs='rake db:seed'
 alias rsp='rs -e production'
 alias rst='rs -e test'
 
+# Rake
+alias rake="noglob rake"
+
 # Heroku
 alias hk='heroku'
 
