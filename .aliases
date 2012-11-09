@@ -90,7 +90,7 @@ alias grs='git reset --soft HEAD~'
 alias grsh='git reset --hard HEAD~'
 
 alias grbmaster='git rebase HEAD feature && git rebase HEAD @{-2}'
-alias gup='git fetch; git rebase origin/master'
+alias gup='git fetch origin master; git rebase origin/master'
 alias gupc='git fetch origin; git rebase origin/`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`'
 alias gpu='git push origin HEAD:master'
 
