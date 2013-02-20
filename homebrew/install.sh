@@ -19,7 +19,8 @@ brew install git
 brew install nodejs
 brew install mysql
 brew install redis
-brew install mongodb
 brew install hub
+
+npm install -g m
 
 brew cleanup

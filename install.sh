@@ -20,7 +20,7 @@ curl get.pow.cx | sh
 ./shell/install.sh
 
 # Copy to home folder
-for file in .{zshrc,aliases,exports,functions,gitconfig,gemrc,irbrc,railsrc,rvmrc}; do
+for file in .{zshrc,aliases,exports,functions,gitconfig,gemrc,pryrc,railsrc,rvmrc}; do
   cp "$file" ~/
 done
 unset file

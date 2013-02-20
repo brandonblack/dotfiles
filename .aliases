@@ -1,8 +1,8 @@
 # General
 alias oo="open ."
 alias home='cd ~' # the tilda is too hard to reach
-alias 10g='cd /Users/brandon/Projects/work/10gen'
-alias proj='cd /Users/brandon/Projects'
+alias wrk='cd /Users/brandon/Projects/work'
+alias pers='cd /Users/brandon/Projects/personal'
 alias h='history' # shortcut for history
 alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir

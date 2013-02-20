@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:$HOME/bin:$PATH"
 export PATH="PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH""
 
 for file in ~/.{exports,aliases,functions,extra}; do
