@@ -40,6 +40,9 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Ruby
+alias irb='pry'
+
 # JRuby
 alias jrspec='jruby --debug -S rspec --debug'
 alias jprofile='jruby --profile.api -S rspec'

@@ -1,21 +1,20 @@
 bundler
 rubygems-bundler
+gemcutter
 rake
 rvm
 
-yard
-rspec
-guard
-guard-rspec
-guard-bundler
-growl
-
 powder
 gemedit
-barkeep
+lunchy
 
-hirb
-sketches
+pry-nav
+pry-rescue
+pry-doc
+pry-clipboard
 awesome_print
 what_methods
-wirble
+
+t
+rhc
+heroku
