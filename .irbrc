@@ -3,7 +3,7 @@ require 'irb/completion'
 require 'irb/ext/save-history'
 
 # Required Gems
-%w{ap wirble}.each do |pkg|
+%w{awesome_print wirble}.each do |pkg|
   begin
     require pkg
   rescue LoadError => err

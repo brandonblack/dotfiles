@@ -1,1 +1,12 @@
-# System specific exports go here
+# General
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
+export EDITOR="subl -w"
+export ed="subl -w"
+
+# RSpec
+export AUTOFEATURE=true
+export RSPEC=true
+
+# Rails
+export RAILS_ENV='development'

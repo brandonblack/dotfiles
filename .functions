@@ -11,7 +11,7 @@ function rnew() {
     echo "Error! Application name expected."
   else
     mkdir "$1"; cd "$1";
-    rvm --rvmrc --create use `rvm current`@"$1";
+    rvm --ruby-version --create use `rvm current`@"$1";
     gem install rails --no-rdoc --no-ri;
     rails new ../"$1";
     powder link;
@@ -23,26 +23,23 @@ function git-clean {
   git status --porcelain | \egrep '^D' | \sed -E -e 's/^D *//' -e 's/ /\\ /g' -e 's/^|$/"/g'
 }
 
-# Creates a gemset/.rvmrc file named for the current folder
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin
-
-function rvmrc() {
+# Creates a gemset and .ruby-version file named for the current folder
+function ruby-version() {
   if [ $# -ne 1 ]
   then
-    rvm --rvmrc --create use `rvm current`@"${PWD##*/}";
+    rvm --ruby-version --create use `rvm current`@"${PWD##*/}";
   else
-    rvm --rvmrc --create use `rvm current`@"$1";
+    rvm --ruby-version --create use `rvm current`@"$1";
   fi
 }
 
 # DNS Records
-function dighost() { 
+function dighost() {
   host $(dig $1 | grep ANSWER -C 1 | tail -n 1 | awk '{ print $5 }')
 }
 
 # Create a new directory and enter it
-function mkd() {
+function cdmkdir() {
   mkdir -p "$@" && cd "$@"
 }
 

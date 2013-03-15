@@ -1,15 +1,7 @@
 require 'rubygems'
 
-# Required Gems
-%w{awesome_print what_methods}.each do |pkg|
-  begin
-    require pkg
-  rescue LoadError => err
-    $stderr.puts "#{pkg} failed to load."
-  end
-end
-
 Pry.config.editor = 'subl'
+Pry.config.history.file = "~/.irb_history"
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 begin
