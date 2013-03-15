@@ -1,18 +1,23 @@
 # Setup a new rails project
 # 1.) Creates a project folder
-# 2.) Enters the project folder and creates an .rvmrc file
+# 2.) Enters the project folder and creates an .ruby-version file
 # 3.) Installs latest rails
 # 4.) Rails new
 # 5.) Link to pow server
 
 function rnew() {
-  if [ $# -ne 1 ]
+  if [ $# -lt 1 ]
   then
     echo "Error! Application name expected."
   else
     mkdir "$1"; cd "$1";
     rvm --ruby-version --create use `rvm current`@"$1";
-    gem install rails --no-rdoc --no-ri;
+    if [ $2 ]
+    then
+      gem install rails "$2";
+    else
+      gem install rails;
+    fi
     rails new ../"$1";
     powder link;
   fi
