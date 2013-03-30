@@ -5,7 +5,7 @@
 # 4.) Rails new
 # 5.) Link to pow server
 
-function rnew() {
+function rails-new() {
   if [ $# -lt 1 ]
   then
     echo "Error! Application name expected."
@@ -35,6 +35,16 @@ function ruby-version() {
     rvm --ruby-version --create use `rvm current`@"${PWD##*/}";
   else
     rvm --ruby-version --create use `rvm current`@"$1";
+  fi
+}
+
+# Repeat Command
+function repeat() {
+  if [ $# -lt 2 ]
+  then
+    echo "Error! Count and command required."
+  else
+    for i in {1..$0}; do $#; done
   fi
 }
 

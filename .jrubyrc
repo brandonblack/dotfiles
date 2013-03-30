@@ -1,0 +1,31 @@
+# General Settings
+compat.version = 1.9
+objectspace.enabled = false
+launch.inproc = false
+
+# Compilation Settings
+compile.mode = FORCE
+compile.fastest = true
+compile.invokedynamic = true
+
+# Invoked Dynamic
+#invokedynamic.all = true
+#invokedynamic.safe = true
+
+# Thread Pooling
+thread.pool.enabled = true
+thread.pool.min = 200
+thread.pool.max = 2147483647
+thread.pool.ttl = 60
+
+# Debugging
+# jit.logging.verbose = true
+# debug.loadService = true
+backtrace.color = true
+
+# Native Support
+native.enabled = true
+# cext.enabled = true
+
+# Use JVM coroutines for Fiber.
+# fiber.coroutines=false
