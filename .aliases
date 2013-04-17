@@ -8,8 +8,10 @@ alias h='history' # shortcut for history
 alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
-alias stt='subl .'
 alias brews='brew list -1'
+
+# MongoDB
+alias mtail='tail -f /data/db/current/mongod.log'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -20,8 +22,6 @@ fi
 
 # List all files colorized in long format
 alias l="ls -lah ${colorflag}"
-
-# List only directories
 alias ld='ls -l ${colorflag} | grep "^d"'
 
 # IP addresses
