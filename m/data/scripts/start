@@ -1,0 +1,15 @@
+# get current mongodb version
+version=`mongod --version | egrep -o '[0-9]+\.[0-9]+\.[0-9]+([-_\.]rc[0-9]{1})?'`
+
+# remove symlink if it already exists
+if [ -d /data/db/current ];
+then
+  rm /data/db/current
+fi
+
+# create current symlink
+mkdir -p /data/db/$version
+ln -s /data/db/$version /data/db/current
+
+# start mongodb
+lunchy restart mongodb

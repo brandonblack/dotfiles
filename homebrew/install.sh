@@ -16,11 +16,8 @@ sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2
 brew install homebrew/dupes/grep
 brew install git
 
-brew install nodejs
-brew install mysql
+brew install node
 brew install redis
 brew install hub
-
-npm install -g m
 
 brew cleanup

@@ -1,0 +1,20 @@
+# get the mongodb process id
+pid=`lunchy status mongodb | awk '{print $1}'`
+
+# stop the mongod process
+if [ -n $pid ]
+then
+  kill -2 $pid
+fi
+
+# remove lock file if present
+if [ -f /data/db/current/mongod.lock ];
+then
+  rm /data/db/current/mongod.lock
+fi
+
+# remove symlink if it already exists
+if [ -d /data/db/current ];
+then
+  rm /data/db/current
+fi
