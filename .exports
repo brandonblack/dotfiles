@@ -10,3 +10,6 @@ export RSPEC=true
 
 # Rails
 export RAILS_ENV='development'
+
+# Python
+export WORKON_HOME="$HOME/.virtualenvs"
