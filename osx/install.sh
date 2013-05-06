@@ -100,6 +100,11 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
+### Sublime Text ###
+
+# Disable Press and Hold for OS X Lion
+defaults write com.sublimetext.2 ApplePressAndHoldEnabled -bool false
+
 for app in "Dashboard" "Dock" "Finder" "SystemUIServer" "Terminal" "iTunes"; do
   killall "$app" > /dev/null 2>&1
 done
