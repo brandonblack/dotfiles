@@ -1,6 +1,9 @@
 [core]
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 
+[help]
+  autocorrect = -1
+
 [user]
   email = brandonmblack@gmail.com
   name  = Brandon Black

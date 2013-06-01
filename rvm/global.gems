@@ -4,17 +4,7 @@ gemcutter
 rake
 rvm
 
-powder
-gemedit
-lunchy
-
-pry-nav
-pry-rescue
-pry-doc
-pry-clipboard
-awesome_print
-wirble
-
 t
 rhc
 heroku
+lunchy

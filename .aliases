@@ -26,10 +26,7 @@ alias ld='ls -l ${colorflag} | grep "^d"'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
-
-# Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
@@ -51,8 +48,6 @@ alias r='rails'
 alias rs='rails s'
 alias rg='rails g'
 alias rc='rails c'
-alias rdbc='rake db:create:all'
-alias rdbm='rake db:migrate'
 alias rdbs='rake db:seed'
 alias rsp='rs -e production'
 alias rst='rs -e test'
@@ -77,25 +72,13 @@ alias rvmc='rvm current'
 
 # Git
 alias git=hub
-
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gb='git branch'
 alias gco='git checkout'
 alias gcob='git checkout -b'
-alias gcm='git commit -m'
-alias gca='git commit -am'
-
 alias gs='git status'
-alias gp='git push'
-alias gd='git diff'
-alias gsl='git log --oneline --decorate'
-
-alias ga='git add -A .'
-alias gai='git add --interactive'
-
-alias grb='git rebase -i HEAD~5'
-alias grs='git reset --soft HEAD~'
-alias grsh='git reset --hard HEAD~'
-
 alias gup='git fetch origin master; git rebase origin/master'
-alias gupc='git fetch origin; git rebase origin/`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`'
 alias gpu='git push origin HEAD:master'
+alias grb='git rebase -i HEAD~5'
+alias gd='git diff'
+alias gp='git push'
