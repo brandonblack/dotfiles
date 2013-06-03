@@ -9,6 +9,7 @@ alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
 alias brews='brew list -1'
+alias top=htop
 
 # MongoDB
 alias mtail='tail -f /data/db/current/mongod.log'
@@ -74,6 +75,7 @@ alias rvmc='rvm current'
 alias git=hub
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gb='git branch'
+alias gc='git commit'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gs='git status'
