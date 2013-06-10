@@ -9,9 +9,9 @@
     <string>/usr/local/bin/mongod</string>
     <string>run</string>
     <string>--dbpath</string>
-    <string>/data/db/current</string>
+    <string>/data/db/current/default</string>
     <string>--logpath</string>
-    <string>/data/db/current/mongod.log</string>
+    <string>/data/db/current/default/mongod.log</string>
     <string>--logappend</string>
     <string>--bind_ip</string>
     <string>127.0.0.1</string>
@@ -24,11 +24,11 @@
   <key>UserName</key>
   <string>brandon</string>
   <key>WorkingDirectory</key>
-  <string>/data/db/current</string>
+  <string>/data/db/current/default</string>
   <key>StandardErrorPath</key>
-  <string>/data/db/current/mongod.log</string>
+  <string>/data/db/current/default/mongod.log</string>
   <key>StandardOutPath</key>
-  <string>/data/db/current/mongod.log</string>
+  <string>/data/db/current/default/mongod.log</string>
   <key>SoftResourceLimits</key>
   <integer>64000</integer>
 </dict>

@@ -8,7 +8,7 @@ then
 fi
 
 # create current symlink
-mkdir -p /data/db/$version
+mkdir -p /data/db/$version/default
 ln -s /data/db/$version /data/db/current
 
 # start mongodb

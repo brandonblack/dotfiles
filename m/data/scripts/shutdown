@@ -10,7 +10,7 @@ fi
 # remove lock file if present
 if [ -f /data/db/current/mongod.lock ];
 then
-  rm /data/db/current/mongod.lock
+  rm /data/db/current/*/mongod.lock
 fi
 
 # remove symlink if it already exists
