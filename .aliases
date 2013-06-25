@@ -9,7 +9,6 @@ alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
 alias brews='brew list -1'
-alias top=htop
 
 # MongoDB
 alias mtail='tail -f /data/db/current/mongod.log'
