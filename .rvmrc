@@ -1,2 +1,3 @@
-rvm_make_flags="-j 4"
+rvm_make_flags="--jobs=4"
 rvm_gemset_create_on_use_flag=1
+rvm_autolibs_flag=3
