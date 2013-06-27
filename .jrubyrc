@@ -4,8 +4,8 @@ objectspace.enabled = false
 launch.inproc = false
 
 # Compilation Settings
-compile.mode = FORCE
-compile.fastest = true
+# compile.mode = FORCE
+# compile.fastest = true
 compile.invokedynamic = true
 
 # Invoked Dynamic
@@ -28,4 +28,4 @@ native.enabled = true
 # cext.enabled = true
 
 # Use JVM coroutines for Fiber.
-# fiber.coroutines=false
+fiber.coroutines=false
