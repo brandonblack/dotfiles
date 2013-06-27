@@ -17,7 +17,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ./shell/install.sh
 
 # Copy to home folder
-for file in .{zshrc,aliases,exports,functions,gitconfig,gemrc,pryrc,railsrc,ruby-version,irbrc,jrubyrc,rvmrc}; do
+for file in .{zshrc,aliases,exports,functions,gitconfig,gemrc,pryrc,railsrc,irbrc,jrubyrc,rvmrc}; do
   cp "$file" ~/
 done
 unset file

@@ -1,40 +1,74 @@
-# Setup a new rails project
-# 1.) Creates a project folder
-# 2.) Enters the project folder and creates an .ruby-version file
-# 3.) Installs latest rails
-# 4.) Rails new
-
-function rnew() {
+# Setup a new rails project using latest stable
+function rails-new() {
   if [ $# -lt 1 ]
   then
     echo "Error! Application name expected."
   else
-    mkdir "$1"; cd "$1";
-    rvm --ruby-version --create use `rvm current`@"$1"
+    mkdir $1
+    cd $1
+    ruby-init
     if [ $2 ]
     then
-      gem install rails "$2"
+      gem install rails $2
     else
       gem install rails
     fi
-    rails new ../"$1"
-    ruby-version
-    powder link
+    rails new ../$1
   fi
 }
+alias rornew=rails-new
 
-# Git
-function git-clean {
-  git status --porcelain | \egrep '^D' | \sed -E -e 's/^D *//' -e 's/ /\\ /g' -e 's/^|$/"/g'
+# Setup a new sinatra project using latest stable
+function sinatra-new() {
+  if [ $# -lt 1 ]
+  then
+    echo "Error! Application name expected."
+  fi
+
+  git-export https://github.com/brandonblack/sinatra-boilerplate.git $1
+  cd $1
+  ruby-init
+
+  git init
+  git add -A
+
+  bundle install
 }
+alias srbnew=sinatra-new
 
-# Creates a gemset and .ruby-version file named for the current folder
-function ruby-version() {
+# Creates a .ruby-gemset and .ruby-version
+function ruby-init() {
+  rbversion=`rvm-prompt i v`
+  rbemset=$1
   if [ $# -ne 1 ]
   then
-    rvm --ruby-version --create use `rvm current`@"${PWD##*/}"
+    rbgemset=${PWD##*/}
+  fi
+
+  if [ -f .ruby-version ]
+  then
+    rm .ruby-version
+  fi
+  echo $rbversion > .ruby-version
+
+  if [ -f .ruby-gemset ]
+  then
+    rm .ruby-gemset
+  fi
+  echo $rbgemset > .ruby-gemset
+
+  rvm --create use "$rbversion@$rbgemset"
+}
+alias rbinit=ruby-init
+
+# exports a git repo to a new project folder
+git-export() {
+  if [ $# -lt 2 ]
+  then
+    echo "Error! Repo and project name required."
   else
-    rvm --ruby-version --create use `rvm current`@"$1"
+    git clone --quiet --depth=1 $1 $2
+    rm -rf $2/.git*
   fi
 }
 
