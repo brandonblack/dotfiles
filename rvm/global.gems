@@ -1,6 +1,7 @@
 bundler
 rubygems-bundler
 gemcutter
+gemedit
 rake
 rvm
 
@@ -8,3 +9,10 @@ t
 rhc
 heroku
 lunchy
+
+pry-nav
+pry-rescue
+pry-doc
+pry-clipboard
+awesome_print
+wirble
