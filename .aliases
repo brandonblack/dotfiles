@@ -55,16 +55,6 @@ alias rst='rs -e test'
 # Heroku
 alias hk='heroku'
 
-# Powder
-alias plg='powder applog'
-alias plst='powder list'
-alias popn='powder open'
-alias prst='powder restart'
-alias pstp='powder stop'
-alias pstrt='powder start'
-alias prm='powder remove'
-alias plnk='powder link'
-
 # RVM
 alias ru='rvm use'
 alias rgu='rvm gemset use'
