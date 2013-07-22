@@ -143,6 +143,18 @@ extract () {
   fi
 }
 
+# Git
+
+function pr() {
+  if [ $# -lt 1 ]
+  then
+    echo "Error! Missing Pull Request ID #."
+  else
+    git fetch origin refs/pull/$1/head:pull-request-$1;
+    git checkout pull-request-$1;
+  fi
+}
+
 # 10gen Stuff
 
 function jira() {

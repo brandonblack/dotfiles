@@ -56,10 +56,10 @@ alias rst='rs -e test'
 alias hk='heroku'
 
 # Powder
-alias pl='powder applog'
+alias plg='powder applog'
 alias plst='powder list'
-alias po='powder open'
-alias pr='powder restart'
+alias popn='powder open'
+alias prst='powder restart'
 alias pstp='powder stop'
 alias pstrt='powder start'
 alias prm='powder remove'
