@@ -16,4 +16,5 @@ brew install homebrew/dupes/grep
 brew install git
 brew install node
 brew install hub
+brew install reattach-to-user-namespace
 brew cleanup
