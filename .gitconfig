@@ -17,9 +17,12 @@
 [branch]
   autosetuprebase = always
 
+[rerere]
+  enabled = 1
+
 [color]
-  ui          = auto
-  interactive = auto
+  ui          = 1
+  interactive = 1
 
 [hub]
   http-clone = false
