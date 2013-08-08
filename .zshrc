@@ -8,10 +8,10 @@ unset file
 
 # ZSH (Oh-my-zsh)
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="miloshadzic"
+ZSH_THEME="sorin"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git osx rsync tmux npm)
+plugins=(git git-extras osx rsync tmux npm)
 source $ZSH/oh-my-zsh.sh
 
 # RVM
