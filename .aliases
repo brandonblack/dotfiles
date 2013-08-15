@@ -63,16 +63,17 @@ alias rvmc='rvm current'
 
 # Git
 alias git=hub
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gb='git branch'
 alias gco='git checkout'
 alias gcob='git checkout -b'
-alias gs='git-status'
-alias gup='git fetch origin master; git rebase origin/master'
 alias gd='git diff'
-alias gp='git push'
-alias git-undo='git reset --soft HEAD~'
 alias git-amend='git commit --amend -C HEAD'
-alias git-status='git status -sb'
 alias git-count='git shortlog -sn'
 alias git-credit='git commit --amend --auth "$1 <$2>" -C HEAD'
+alias git-status='git status -sb'
+alias git-undo='git reset --soft HEAD~'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gp='git push'
+alias gs='git status'
+alias gup='git fetch origin master; git rebase origin/master'
+alias guph='branch_name=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3); git fetch origin `echo $branch_name`; git rebase origin/`echo $branch_name`'
