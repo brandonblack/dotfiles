@@ -39,6 +39,10 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Ruby
 alias rake='noglob rake'
 
+# Guard
+alias guard='bundle exec guard'
+alias gdl='guard list'
+
 # JRuby
 alias jrspec='jruby --debug -S rspec --debug'
 alias jprofile='jruby --profile.api -S rspec'
