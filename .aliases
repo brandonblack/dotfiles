@@ -2,6 +2,7 @@
 alias oo="open ."
 alias home='cd ~' # the tilda is too hard to reach
 alias wrk='cd /Users/brandon/Projects/work'
+alias drv='cd /Users/brandon/Projects/work/drivers'
 alias ops='cd /Users/brandon/Projects/open-source'
 alias pers='cd /Users/brandon/Projects/personal'
 alias h='history' # shortcut for history
