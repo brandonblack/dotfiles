@@ -43,6 +43,12 @@ alias rake='noglob rake'
 alias guard='bundle exec guard'
 alias gdl='guard list'
 
+# Bundler
+alias bi='bundle install'
+alias bu='bundle update'
+alias be='bundle exec'
+alias bv='bundle viz'
+
 # JRuby
 alias jrspec='jruby --debug -S rspec --debug'
 alias jprofile='jruby --profile.api -S rspec'
