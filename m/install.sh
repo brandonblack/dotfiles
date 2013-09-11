@@ -1,7 +1,12 @@
 npm install -g m
 
+sudo mkdir -p /data
+sudo chown -R `whoami` /data
+
 cp -R m/data /data
-sudo chown -R /data
+chmod +x /data/scripts/*
+
+sed -i '' "s/user-placeholder/`whoami`/g" /data/config/org.mongodb.default.plist
 
 gem install lunchy
 lunchy install /data/config/org.mongodb.default.plist

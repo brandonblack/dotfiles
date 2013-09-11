@@ -1,10 +1,10 @@
 # General
 alias oo="open ."
 alias home='cd ~' # the tilda is too hard to reach
-alias wrk='cd /Users/brandon/Projects/work'
-alias drv='cd /Users/brandon/Projects/work/drivers'
-alias ops='cd /Users/brandon/Projects/open-source'
-alias pers='cd /Users/brandon/Projects/personal'
+alias wrk="cd /Users/`whoami`/Projects/work"
+alias drv="cd /Users/`whoami`/Projects/work/drivers"
+alias ops="cd /Users/`whoami`/Projects/open-source"
+alias pers="cd /Users/`whoami`/Projects/personal"
 alias h='history' # shortcut for history
 alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir

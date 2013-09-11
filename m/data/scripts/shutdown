@@ -8,9 +8,9 @@ then
 fi
 
 # remove lock file if present
-if [ -f /data/db/current/mongod.lock ];
+if [ -f /data/db/current/default/mongod.lock ];
 then
-  rm /data/db/current/*/mongod.lock
+  rm /data/db/current/*/default/mongod.lock
 fi
 
 # remove symlink if it already exists

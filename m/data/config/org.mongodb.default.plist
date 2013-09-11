@@ -22,7 +22,7 @@
   <key>KeepAlive</key>
   <false/>
   <key>UserName</key>
-  <string>brandon</string>
+  <string>user-placeholder</string>
   <key>WorkingDirectory</key>
   <string>/data/db/current/default</string>
   <key>StandardErrorPath</key>
