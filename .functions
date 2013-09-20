@@ -39,7 +39,7 @@ alias srbnew=sinatra-new
 # Creates a .ruby-gemset and .ruby-version
 function ruby-init() {
   rbversion=`rvm-prompt i v`
-  rbemset=$1
+  rbgemset=$1
   if [ $# -ne 1 ]
   then
     rbgemset=${PWD##*/}
