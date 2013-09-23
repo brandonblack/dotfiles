@@ -33,9 +33,6 @@ alias whois="whois -h whois-servers.net"
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
 # Ruby
 alias rake='noglob rake'
 

@@ -143,15 +143,24 @@ extract () {
   fi
 }
 
-# Git
-
+# Checks out a specified pull request on a new branch
 function pr() {
   if [ $# -lt 1 ]
   then
     echo "Error! Missing Pull Request ID #."
   else
-    git fetch origin refs/pull/$1/head:pull-request-$1;
+    git fetch origin refs/pull/$1/head:PR-$1;
     git checkout PR-$1;
+  fi
+}
+
+# Recursively deletes files which match the given selector
+function rrm() {
+  if [ $# -lt 1 ]
+  then
+    echo "Error! Missing required match selector."
+  else
+    find . -type f -name $1 -ls -delete > /dev/null
   fi
 }
 
