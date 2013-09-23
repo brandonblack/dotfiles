@@ -151,7 +151,7 @@ function pr() {
     echo "Error! Missing Pull Request ID #."
   else
     git fetch origin refs/pull/$1/head:pull-request-$1;
-    git checkout pull-request-$1;
+    git checkout PR-$1;
   fi
 }
 
