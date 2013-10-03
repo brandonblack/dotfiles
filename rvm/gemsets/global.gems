@@ -5,7 +5,6 @@ gemedit
 rake
 rvm
 
-t
 rhc
 heroku
 lunchy
