@@ -40,8 +40,8 @@ alias rake='noglob rake'
 alias guard='bundle exec guard'
 alias gdl='guard list'
 
-# Bundler
-alias bi='bundle install'
+# Bundler (requires v1.4.0+)
+alias bi='bundle install -j8'
 alias bu='bundle update'
 alias be='bundle exec'
 alias bv='bundle viz'
