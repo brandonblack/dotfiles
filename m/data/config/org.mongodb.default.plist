@@ -29,7 +29,15 @@
   <string>/data/db/current/default/mongod.log</string>
   <key>StandardOutPath</key>
   <string>/data/db/current/default/mongod.log</string>
+  <key>HardResourceLimits</key>
+  <dict>
+    <key>NumberOfFiles</key>
+    <integer>1024</integer>
+  </dict>
   <key>SoftResourceLimits</key>
-  <integer>64000</integer>
+  <dict>
+    <key>NumberOfFiles</key>
+    <integer>1024</integer>
+  </dict>
 </dict>
 </plist>

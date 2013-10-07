@@ -4,7 +4,7 @@ pid=`lunchy status mongodb | awk '{print $1}'`
 # stop the mongod process
 if [ -n $pid ]
 then
-  kill -2 $pid
+  kill -2 $pid > /dev/null
 fi
 
 # remove lock file if present
