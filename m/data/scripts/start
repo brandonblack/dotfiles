@@ -1,9 +1,13 @@
+#!/usr/bin/env sh
+
 # get current mongodb version
-version=`mongod --version | egrep -o '[0-9]+\.[0-9]+\.[0-9]+([-_\.][a-zA-Z0-9]+)$'`
+version=`mongod --version | egrep -o '[0-9]+\.[0-9]+\.[0-9]+([-_\.][a-zA-Z0-9]+)?'`
 
 # create current symlink
-mkdir -p /data/db/$version/default
-ln -Fs /data/db/$version /data/db/current
+if [ ! -z "$version" ]; then
+  mkdir -p /data/db/$version/default
+  ln -Fs /data/db/$version /data/db/current
+fi
 
 # start mongodb
 lunchy restart mongodb
