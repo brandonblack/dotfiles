@@ -144,7 +144,7 @@ function rrm() {
   fi
 }
 
-# 10gen Stuff
+# MongoDB, Inc. Stuff
 
 function jira() {
   if [ -n $1 ]
@@ -160,4 +160,33 @@ function jiras() {
     term=`echo "$1" | tr '[:upper:]' '[:lower:]'`
     open "https://jira.mongodb.org/secure/IssueNavigator.jspa?reset=true&jqlQuery=summary+~+$term+OR+description+~+$term+OR+comment+~+$term"
   fi
+}
+
+function rvm-do() {
+  if [ $# -lt 1 ]; then
+    echo "Error! Do what now?"
+  fi
+
+  # set the gemset from file or folder
+  if [ -f .ruby-gemset ]; then
+    gemset=`cat .ruby-gemset`
+  else
+    gemset=${PWD##*/}
+  fi
+
+  for rbv in {jruby,1.8.7,1.9.3,2.0.0}@$gemset; do
+    echo "\n------------------------------------------------------------------"
+    echo "[RUBY] $rbv..."
+    echo "------------------------------------------------------------------\n"
+    if [ -f Gemfile.lock ]; then
+      rm Gemfile.lock
+    fi
+
+    if [ -f Gemfile ]; then
+      rvm $rbv do bundle -j8
+      rvm $rbv do bundle exec $@
+    else
+      rvm $rbv do $@
+    fi
+  done
 }

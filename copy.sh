@@ -4,6 +4,9 @@ for file in .{zshrc,aliases,exports,functions,gitconfig,gemrc,pryrc,irbrc,jrubyr
   cp "$file" ~/
 done
 unset file
-echo "Copying RVM Gemsets..."
-cp rvm/*.gems ~/.rvm/gemsets
+
+echo "Copying RVM Gemsets & Hooks..."
+cp -R rvm/gemsets ~/.rvm
+cp -R rvm/hooks ~/.rvm
+
 echo "[DONE]\n"
