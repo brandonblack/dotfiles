@@ -4,9 +4,6 @@ export LANG="en_US"
 export EDITOR="subl -w"
 export ed="subl -w"
 
-# Drip and JRuby
-export DRIP_SHUTDOWN=5
-
 # RSpec
 export AUTOFEATURE=true
 export RSPEC=true
