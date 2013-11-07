@@ -8,6 +8,7 @@ rvm
 rhc
 heroku
 lunchy
+showterm
 
 pry-nav
 pry-rescue
