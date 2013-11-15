@@ -13,5 +13,5 @@ sudo ln -s `brew --prefix apple-gcc42`/bin/gcc-4.2 /usr/bin/gcc-4.2
 sudo ln -s `brew --prefix apple-gcc42`/bin/g++-4.2 /usr/bin/gcc-4.2
 
 # Install default brew packages
-brew install git node hub reattach-to-user-namespace tree ack
+brew install git node hub reattach-to-user-namespace tree ack terminal-notifier
 brew cleanup
