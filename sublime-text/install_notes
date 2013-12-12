@@ -1,8 +1,12 @@
-# Install Package Control (Press Control + ` in sublime)
+# Sublime 2 - Install Package Control (Press Control + ` in sublime)
 import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+
+# Sublime 3 - Install Package Control
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 
 # Setup Command Line
 sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /bin/subl
+sudo ln -s /Applications/Sublime\ Text\ 3.app/Contents/SharedSupport/bin/subl /bin/subl3
 
 # My Default Packages
 Prefixr - http://wbond.net/sublime_packages/prefixr
@@ -16,6 +20,5 @@ Emmet - https://github.com/sergeche/emmet-sublime
 Emmet LiveStyle - https://github.com/emmetio/livestyle-sublime
 RubyBlockConvertor
 RubyToggleString
-Auto Encoding for Ruby
-ExportHtml
+Highlight
 FindKeyConflicts
