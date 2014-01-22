@@ -144,24 +144,6 @@ function rrm() {
   fi
 }
 
-# MongoDB, Inc. Stuff
-
-function jira() {
-  if [ -n $1 ]
-  then
-    ticket=`echo "$1" | tr '[:lower:]' '[:upper:]'`
-    open https://jira.mongodb.org/browse/`echo $ticket`
-  fi
-}
-
-function jiras() {
-  if [ -n $1 ]
-  then
-    term=`echo "$1" | tr '[:upper:]' '[:lower:]'`
-    open "https://jira.mongodb.org/secure/IssueNavigator.jspa?reset=true&jqlQuery=summary+~+$term+OR+description+~+$term+OR+comment+~+$term"
-  fi
-}
-
 function rvm-do() {
   if [ $# -lt 1 ]; then
     echo "Error! Do what now?"
@@ -190,3 +172,4 @@ function rvm-do() {
     fi
   done
 }
+

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 npm install -g m
 
 sudo mkdir -p /data

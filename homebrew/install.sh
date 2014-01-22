@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install Homebrew
-ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 brew install findutils
 brew install coreutils
@@ -13,5 +13,5 @@ sudo ln -s `brew --prefix apple-gcc42`/bin/gcc-4.2 /usr/bin/gcc-4.2
 sudo ln -s `brew --prefix apple-gcc42`/bin/g++-4.2 /usr/bin/gcc-4.2
 
 # Install default brew packages
-brew install git node hub reattach-to-user-namespace tree ack terminal-notifier
+brew install git tmux node hub reattach-to-user-namespace tree ack terminal-notifier
 brew cleanup
