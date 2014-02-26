@@ -20,7 +20,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ./m/install.sh
 
 # Copy to home folder
-for file in .{zshrc,aliases,exports,functions,gitconfig,gemrc,pryrc,irbrc,jrubyrc,rvmrc,tmux.conf}; do
+for file in .{zshrc,git-flow,aliases,exports,functions,gitconfig,gemrc,pryrc,irbrc,jrubyrc,rvmrc,tmux.conf}; do
   cp "$file" ~/
 done
 unset file
