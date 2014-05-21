@@ -11,6 +11,10 @@ alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
 alias brews='brew list -1'
 
+alias search='find . -maxdepth 1 -type f | xargs grep -in --color=always '
+alias hist='history | grep -in --color=always '
+alias wcr='wc `find . -type f`'
+
 # MongoDB
 alias mtail='tail -f /data/db/current/mongod.log'
 
@@ -26,7 +30,8 @@ alias l="ls -lah ${colorflag}"
 alias ld='ls -l ${colorflag} | grep "^d"'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias eip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias iip="arp `hostname` | awk -F'[()]' '{print $2}'"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 alias whois="whois -h whois-servers.net"
 
@@ -79,7 +84,7 @@ alias git-count='git shortlog -sn'
 alias git-credit='git commit --amend --auth "$1 <$2>" -C HEAD'
 alias git-status='git status -sb'
 alias git-undo='git reset --soft HEAD~'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gp='git push'
 alias gs='git status'
 alias gup='git fetch origin master; git rebase origin/master'

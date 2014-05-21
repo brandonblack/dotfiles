@@ -68,7 +68,7 @@ function dighost() {
 }
 
 # Create a new directory and enter it
-function cdmkdir() {
+function mcd() {
   mkdir -p "$@" && cd "$@"
 }
 
