@@ -1,7 +1,7 @@
 require 'rubygems'
 
 Pry.config.editor = 'subl'
-Pry.config.history.file = "~/.irb_history"
+Pry.config.history.file = "~/.irb-history"
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 begin
