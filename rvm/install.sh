@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # RVM Install
-curl -L https://get.rvm.io | bash -s stable
+curl -L https://get.rvm.io | bash -s stable --ignore-dotfiles
 
 # Copy Gemsets
 cp -R rvm/gemsets/* ~/.rvm/gemsets

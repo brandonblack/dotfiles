@@ -15,6 +15,5 @@ plugins=(git git-extras git-flow osx rsync rails tmux npm node)
 source $ZSH/oh-my-zsh.sh
 
 # RVM
-PATH=$PATH:$HOME/.rvm/bin
-source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

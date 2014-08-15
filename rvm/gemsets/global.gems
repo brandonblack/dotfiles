@@ -5,8 +5,6 @@ gemedit
 rake
 rvm
 
-rhc
-heroku
 lunchy
 showterm
 
