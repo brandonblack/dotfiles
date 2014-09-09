@@ -5,8 +5,10 @@ gemedit
 rake
 rvm
 
+hirb
 lunchy
 showterm
+tmuxinator
 
 pry-nav
 pry-rescue

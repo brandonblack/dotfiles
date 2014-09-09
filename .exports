@@ -10,3 +10,6 @@ export RSPEC=true
 
 # Python
 export WORKON_HOME="$HOME/.virtualenvs"
+
+# TMUX
+export DISABLE_AUTO_TITLE=true
