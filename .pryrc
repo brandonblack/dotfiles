@@ -107,7 +107,6 @@ load railsrc if defined?(Rails) && Rails.env && File.exists?(railsrc)
 
 # Pry Config & Prompt
 Pry.config.editor = 'subl'
-Pry.config.history.file = "~/.irb_history"
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 begin
@@ -130,8 +129,9 @@ end
 begin
   require 'hirb'
   Hirb.enable(pager: false, max_fields: 8, vertical: true)
-  Pry.config.print = proc do |output, value|
-    Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
+  old_print = Pry.config.print
+  Pry.config.print = proc do |*args|
+    Hirb::View.view_or_page_output(args[1]) || old_print.call(*args)
   end
 rescue LoadError => e
   $stderr.puts 'hirb failed to load.'
