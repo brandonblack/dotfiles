@@ -107,7 +107,7 @@ load railsrc if defined?(Rails) && Rails.env && File.exists?(railsrc)
 
 # Pry Config & Prompt
 Pry.config.editor = 'subl'
-Pry.config.history.file = "~/.irb-history"
+Pry.config.history.file = "~/.irb_history"
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 begin
