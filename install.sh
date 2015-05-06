@@ -10,9 +10,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Run the Homebrew install
 ./homebrew/install.sh
 
-# Run the RVM install
-./rvm/install.sh
-
 # Switch to z-shell and install oh-my-zsh
 ./shell/install.sh
 

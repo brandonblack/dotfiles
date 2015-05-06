@@ -1,43 +1,10 @@
-# Setup a new sinatra project using latest stable
-function sinatra-new() {
-  if [ $# -lt 1 ]
-  then
-    echo "Error! Application name expected."
-  fi
-
-  git-export https://github.com/brandonblack/sinatra-boilerplate.git $1
-  cd $1
-  ruby-init
-
-  git init
-  git add -A
-
-  bundle install
-}
-alias srbnew=sinatra-new
-
-# Creates a .ruby-gemset and .ruby-version
+# Creates a .ruby-version file
 function ruby-init() {
-  rbversion=`rvm-prompt i v`
-  rbgemset=$1
-  if [ $# -ne 1 ]
-  then
-    rbgemset=${PWD##*/}
-  fi
-
   if [ -f .ruby-version ]
   then
     rm .ruby-version
   fi
-  echo $rbversion > .ruby-version
-
-  if [ -f .ruby-gemset ]
-  then
-    rm .ruby-gemset
-  fi
-  echo $rbgemset > .ruby-gemset
-
-  rvm --create use "$rbversion@$rbgemset"
+  ruby -v | awk '{print $1"-"$2}' > .ruby-version
 }
 alias rbinit=ruby-init
 
@@ -72,7 +39,7 @@ function mcd() {
   mkdir -p "$@" && cd "$@"
 }
 
-# Add reminder to Reminders.app (OS X 10.8)
+# Add reminder to Reminders.app (OS X 10.8+)
 function remind() {
 	local text
 	if [ -t 0 ]; then
@@ -133,43 +100,3 @@ function pr() {
     git checkout PR-$1;
   fi
 }
-
-# Recursively deletes files which match the given selector
-function rrm() {
-  if [ $# -lt 1 ]
-  then
-    echo "Error! Missing required match selector."
-  else
-    find . -type f -name $1 -ls -delete > /dev/null
-  fi
-}
-
-function rvm-do() {
-  if [ $# -lt 1 ]; then
-    echo "Error! Do what now?"
-  fi
-
-  # set the gemset from file or folder
-  if [ -f .ruby-gemset ]; then
-    gemset=`cat .ruby-gemset`
-  else
-    gemset=${PWD##*/}
-  fi
-
-  for rbv in {jruby,1.8.7,1.9.3,2.0.0}@$gemset; do
-    echo "\n------------------------------------------------------------------"
-    echo "[RUBY] $rbv..."
-    echo "------------------------------------------------------------------\n"
-    if [ -f Gemfile.lock ]; then
-      rm Gemfile.lock
-    fi
-
-    if [ -f Gemfile ]; then
-      rvm $rbv do bundle -j8
-      rvm $rbv do bundle exec $@
-    else
-      rvm $rbv do $@
-    fi
-  done
-}
-
