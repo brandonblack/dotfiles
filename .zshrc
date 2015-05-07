@@ -6,6 +6,9 @@ for file in ~/.{exports,aliases,functions}; do
 done
 unset file
 
+# rbenv
+eval "$(rbenv init -)"
+
 # ZSH (Oh-my-zsh)
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sorin"
