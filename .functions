@@ -1,13 +1,3 @@
-# Creates a .ruby-version file
-function ruby-init() {
-  if [ -f .ruby-version ]
-  then
-    rm .ruby-version
-  fi
-  ruby -v | awk '{print $1"-"$2}' > .ruby-version
-}
-alias rbinit=ruby-init
-
 # exports a git repo to a new project folder
 git-export() {
   if [ $# -lt 2 ]
@@ -91,7 +81,7 @@ extract () {
 }
 
 # Checks out a specified pull request on a new branch
-function pr() {
+function git-pr() {
   if [ $# -lt 1 ]
   then
     echo "Error! Missing Pull Request ID #."

@@ -7,5 +7,8 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install findutils coreutils
 
 # Install default brew packages
-brew install findutils rbenv git tmux node hub parallel reattach-to-user-namespace tree ack terminal-notifier
+brew install findutils rbenv git tmux node hub parallel tree ack terminal-notifier
 brew cleanup
+
+# Install default node packages
+npm install --global speed-test

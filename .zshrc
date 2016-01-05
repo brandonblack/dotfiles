@@ -14,6 +14,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sorin"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git git-extras git-flow osx rsync tmux npm node)
+plugins=(git git-extras git-flow osx rsync tmux npm node virtualenv virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
