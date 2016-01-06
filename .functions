@@ -80,6 +80,20 @@ extract () {
   fi
 }
 
+# Sets desktop background for all spaces (OS X 10.11+ only)
+function set-background() {
+if [ $# -lt 1 ]; then
+echo "Error! Missing required background image file name."
+else
+filePath=`realpath $1`
+sqlite3 /Users/`whoami`/Library/Application\ Support/Dock/desktoppicture.db << EOF
+UPDATE data SET value = "$filePath";
+.quit
+EOF
+killall Dock
+fi
+}
+
 # Checks out a specified pull request on a new branch
 function git-pr() {
   if [ $# -lt 1 ]
