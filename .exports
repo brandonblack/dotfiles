@@ -11,5 +11,8 @@ export RSPEC=true
 # Python
 export WORKON_HOME="$HOME/.virtualenvs"
 
+# Go
+export GOPATH="$HOME/.go"
+
 # TMUX
 export DISABLE_AUTO_TITLE=true
