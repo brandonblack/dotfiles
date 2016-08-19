@@ -1,8 +1,8 @@
 # General
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
-export EDITOR="subl -w"
-export ed="subl -w"
+export EDITOR="atom -w"
+export ed="atom -w"
 
 # RSpec
 export AUTOFEATURE=true
