@@ -10,6 +10,7 @@ alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
 alias brews='brew list -1'
+alias gzip=pigz
 
 alias search='find . -maxdepth 1 -type f | xargs grep -in --color=always '
 alias hist='history | grep -in --color=always '
