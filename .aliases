@@ -16,13 +16,6 @@ alias search='find . -maxdepth 1 -type f | xargs grep -in --color=always '
 alias hist='history | grep -in --color=always '
 alias wcr='wc `find . -type f`'
 
-# GitHub
-alias ghr='git pull && bin/rake db:migrate db:test:prepare && gco db/test-structure.sql'
-alias gwrk='wrk && tab && zeus start && tab && bin/console && tab && bin/server'
-
-# Old Habits Die Hard
-alias subl=atom
-
 # MongoDB
 alias mtail='tail -f /data/db/current/mongod.log'
 
