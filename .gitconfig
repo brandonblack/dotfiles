@@ -7,6 +7,7 @@
 [user]
   email = brandonmblack@gmail.com
   name  = Brandon Black
+        signingkey = 64897700
 
 [github]
   user = brandonblack
@@ -46,3 +47,10 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  program = /usr/local/MacGPG2/bin/gpg2
+
