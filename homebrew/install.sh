@@ -7,7 +7,7 @@
 brew install findutils coreutils
 
 # Install default brew packages
-brew install rbenv git tmux node pigz hub htop parallel tree ack terminal-notifier python python3
+brew install rbenv git tmux node pigz hub htop parallel tree ack terminal-notifier python python3 pinentry-mac heroku
 brew cleanup
 
 # Python Setup
