@@ -1,5 +1,56 @@
+#!/bin/bash
+
+function dev-restart() {
+  sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+  sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+}
+
+# create a new dev app alias
+function dev-init() {
+sudo -v
+if [ $# -lt 2 ]
+then
+  echo "Error! App alias and port required."
+else
+local name=$(echo $1 | awk '{print tolower($0)}')
+tee /usr/local/etc/nginx/servers/$name.conf > /dev/null << EOF
+server {
+    listen 80;
+    server_name $name.dev;
+    location / {
+        proxy_pass http://127.0.0.1:$2;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+    }
+}
+EOF
+dev-restart
+fi
+}
+
+# delete a dev app alias
+function dev-rm() {
+if [ $# -lt 1 ]
+then
+  echo "Error! App name required."
+else
+  local name=$(echo $1 | awk '{print tolower($0)}')
+  rm /usr/local/etc/nginx/servers/$name.conf
+fi
+}
+
+# list current dev app aliases
+function dev-ls() {
+  echo "\nAvailable Environments:\n"
+  for f in /usr/local/etc/nginx/servers/*.conf; do
+    local name=$(basename $f)
+    printf '* %s\n' "${name%.conf}"
+  done
+}
+
 # exports a git repo to a new project folder
-git-export() {
+function git-export() {
   if [ $# -lt 2 ]
   then
     echo "Error! Repo and project name required."
@@ -24,11 +75,6 @@ function dighost() {
   host $(dig $1 | grep ANSWER -C 1 | tail -n 1 | awk '{ print $5 }')
 }
 
-# Create a new directory and enter it
-function mcd() {
-  mkdir -p "$@" && cd "$@"
-}
-
 # Add reminder to Reminders.app (OS X 10.8+)
 function remind() {
   local text
@@ -39,7 +85,7 @@ function remind() {
   fi
   osascript >/dev/null <<EOF
 tell application "Reminders"
-  tell the default list
+  tell list "Personal" of default account
     make new reminder with properties {name:"$text"}
   end tell
 end tell
@@ -77,30 +123,5 @@ extract () {
     esac
   else
     echo "'$1' is not a valid file"
-  fi
-}
-
-# Sets desktop background for all spaces (OS X 10.11+ only)
-function set-background() {
-if [ $# -lt 1 ]; then
-echo "Error! Missing required background image file name."
-else
-filePath=`realpath $1`
-sqlite3 /Users/`whoami`/Library/Application\ Support/Dock/desktoppicture.db << EOF
-UPDATE data SET value = "$filePath";
-.quit
-EOF
-killall Dock
-fi
-}
-
-# Checks out a specified pull request on a new branch
-function git-pr() {
-  if [ $# -lt 1 ]
-  then
-    echo "Error! Missing Pull Request ID #."
-  else
-    git fetch origin refs/pull/$1/head:PR-$1;
-    git checkout PR-$1;
   fi
 }
