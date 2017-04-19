@@ -9,8 +9,15 @@ sudo ./osx/install.sh
 # Switch to z-shell and install oh-my-zsh
 ./shell/install.sh
 
-# Install m and MongoDB
-./m/install.sh
+# Setup Ruby
+./ruby/install.sh
 
-# Copy to home folder
+# Setup Dev Environment (dnsmasq + nginx)
+./dev/install.sh
+
+# Install Fonts
+cp fonts/*.ttf /Library/Fonts/
+cp fonts/*.otf /Library/Fonts/
+
+# Copy All-the-Things
 ./copy.sh
