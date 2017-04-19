@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # Add Global Gems
 if defined?(::Bundler)
   gemset = ENV['GEM_PATH'].split(':').grep(/(ruby|jruby|rbx).*@global/).first
