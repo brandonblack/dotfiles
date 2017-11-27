@@ -16,4 +16,4 @@ brew cleanup
 pip install virtualenv virtualenvwrapper
 
 # Install default node packages
-npm install --global speed-test
+npm install --global speed-test tldr
