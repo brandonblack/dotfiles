@@ -48,6 +48,7 @@ alias tk="tmux kill-session -t $1"
 
 # Ruby
 alias rake='noglob rake'
+alias bundle='noglob bundle'
 
 # Guard
 alias guard='bundle exec guard'
