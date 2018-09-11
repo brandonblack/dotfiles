@@ -6,9 +6,12 @@ done
 unset file
 
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="/usr/local/share/npm/bin:$HOME/bin:/usr/local/bin:$PATH"
 
-# go-lang
+# nvm
+export NVM_DIR="$HOME/.nvm" 
+. "$(brew --prefix nvm)/nvm.sh"
+
+# go
 export PATH="$GOPATH/bin:$PATH"
 
 # rbenv
@@ -31,7 +34,7 @@ POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
 POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
 POWERLEVEL9K_BATTERY_LOW_COLOR='red'
 POWERLEVEL9K_BATTERY_ICON='\uf1e6'
-POWERLEVEL9K_TIME_FORMAT="%D{ %H:%M:%S \uf017}"
+POWERLEVEL9K_TIME_FORMAT="%D{ %H:%M:%S}"
 POWERLEVEL9K_TIME_FOREGROUND="white"
 POWERLEVEL9K_TIME_BACKGROUND="black"
 POWERLEVEL9K_MODE='nerdfont-complete'

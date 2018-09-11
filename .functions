@@ -16,7 +16,7 @@ local name=$(echo $1 | awk '{print tolower($0)}')
 tee /usr/local/etc/nginx/servers/$name.conf > /dev/null << EOF
 server {
     listen 80;
-    server_name $name.dev;
+    server_name $name.test;
     location / {
         proxy_pass http://127.0.0.1:$2;
         proxy_set_header Host \$host;

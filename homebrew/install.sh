@@ -7,13 +7,7 @@
 brew install findutils coreutils
 
 # Install default brew packages
-brew install rbenv git tmux node pigz hub htop parallel tree ack terminal-notifier python python3 pinentry-mac heroku dnsmasq nginx phantomjs ttygif
+brew install direnv rbenv git tmux nvm hub htop parallel tree ack terminal-notifier python python3 pinentry-mac dnsmasq nginx
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew cleanup
-
-# Python Setup
-pip install virtualenv virtualenvwrapper
-
-# Install default node packages
-npm install --global speed-test tldr

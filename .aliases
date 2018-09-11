@@ -60,11 +60,6 @@ alias bu='bundle update'
 alias be='bundle exec'
 alias bv='bundle viz'
 
-# JRuby
-alias jrspec='jruby --debug -S rspec --debug'
-alias jprofile='jruby --profile.api -S rspec'
-alias jexec='jruby -S'
-
 # Git
 alias git=hub
 alias gb='git branch'

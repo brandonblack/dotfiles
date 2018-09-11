@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Setup DNSMasq
-echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf
+echo "address=/test/127.0.0.1" > /usr/local/etc/dnsmasq.conf
 
 sudo mkdir -p /etc/resolver
-sudo tee /etc/resolver/dev >/dev/null <<EOF
+sudo tee /etc/resolver/test >/dev/null <<EOF
 nameserver 127.0.0.1
 EOF
 

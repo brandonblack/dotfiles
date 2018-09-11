@@ -75,11 +75,6 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-### Time Machine ###
-
-# Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
-
 ### TextEdit ###
 
 # Use plain text mode for new TextEdit documents
