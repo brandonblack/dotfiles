@@ -7,7 +7,7 @@
 brew install findutils coreutils
 
 # Install default brew packages
-brew install direnv rbenv git tmux nvm hub htop parallel tree ack terminal-notifier python python3 pinentry-mac dnsmasq nginx
+brew install direnv rbenv git ctop tmux nvm hub htop parallel tree ack terminal-notifier python python3 pinentry-mac dnsmasq nginx
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew cleanup
