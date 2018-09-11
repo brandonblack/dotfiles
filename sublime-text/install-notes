@@ -2,17 +2,8 @@
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 # My Default Packages
-Prefixr - http://wbond.net/sublime_packages/prefixr
 Alignment - http://wbond.net/sublime_packages/alignment
-ApplySyntax - https://github.com/phillipkoebbe/DetectSyntax
-Fetch - http://net.tutsplus.com/articles/news/introducing-nettuts-fetch/
 GitGutter - https://github.com/jisaacks/GitGutter
-GitHubinator - https://github.com/ehamiter/ST2-GitHubinator
 TrailingSpaces - https://github.com/SublimeText/TrailingSpaces
 Emmet - https://github.com/sergeche/emmet-sublime
-Emmet LiveStyle - https://github.com/emmetio/livestyle-sublime
-ExpandRegion - https://github.com/aronwoost/sublime-expand-region
-RubyBlockConvertor
-RubyToggleString
 Highlight
-FindKeyConflicts
