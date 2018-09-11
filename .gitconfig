@@ -10,7 +10,7 @@
         signingkey = 64897700
 
 [github]
-  user = brandonblack
+  user = brblck
 
 [push]
   default = tracking
