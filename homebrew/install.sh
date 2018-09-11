@@ -10,4 +10,5 @@ brew install findutils coreutils
 brew install direnv rbenv git ctop tmux nvm hub htop parallel tree ack terminal-notifier python python3 pinentry-mac dnsmasq nginx
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
+brew cask install graphiql
 brew cleanup
