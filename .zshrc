@@ -1,14 +1,9 @@
 #!/bin/bash
 
-for file in ~/.{exports,aliases,functions}; do
-  [ -r "$file" ] && source "$file"
-done
-unset file
-
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # nvm
-export NVM_DIR="$HOME/.nvm" 
+export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
 # go
@@ -18,7 +13,7 @@ export PATH="$GOPATH/bin:$PATH"
 eval "$(rbenv init -)"
 
 # powerline config
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_OS_ICON_BACKGROUND="black"
 POWERLEVEL9K_OS_ICON_FOREGROUND="white"
@@ -40,7 +35,7 @@ POWERLEVEL9K_TIME_BACKGROUND="black"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_COLOR_SCHEME='dark'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_STATUS_VERBOSE=true
+POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm virtualenv_joined rbenv_joined background_jobs_joined battery_joined time_joined)
@@ -66,3 +61,8 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git git-extras git-flow osx heroku rsync tmux npm node virtualenv virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
+
+for file in ~/.{exports,aliases,functions}; do
+  [ -r "$file" ] && source "$file"
+done
+unset file

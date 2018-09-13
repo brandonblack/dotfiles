@@ -11,35 +11,23 @@ alias h='history' # shortcut for history
 alias c='clear' # shortcut to clear your terminal
 alias ..='cd ..' # move up 1 dir
 alias ...='cd ../..' # move up 2 dirs
-alias brews='brew list -1'
 alias gzip=pigz
-
 alias search='find . -maxdepth 1 -type f | xargs grep -in --color=always '
-alias hist='history | grep -in --color=always '
-alias wcr='wc `find . -type f`'
 
 # MongoDB
 alias mtail='tail -f /data/db/current/mongod.log'
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
-else # OS X `ls`
-  colorflag="-G"
-fi
-
 # List all files colorized in long format
-alias l="ls -lah ${colorflag}"
-alias ld='ls -l ${colorflag} | grep "^d"'
+alias ls="ls -lh --color"
+alias lsh="ls -lah --color"
+alias lsf='ls -lah --color | grep "^-"'
+alias lsd='ls -lah --color | grep "^d"'
 
 # IP addresses
-alias eip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias iip="arp `hostname` | awk -F'[()]' '{print $2}'"
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="arp `hostname` | awk -F'[()]' '{print $2}'"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 alias whois="whois -h whois-servers.net"
-
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # Tmux Helpers
 alias tl="tmux list-sessions"
@@ -49,10 +37,6 @@ alias tk="tmux kill-session -t $1"
 # Ruby
 alias rake='noglob rake'
 alias bundle='noglob bundle'
-
-# Guard
-alias guard='bundle exec guard'
-alias gdl='guard list'
 
 # Bundler (requires v1.4.0+)
 alias bi='bundle install -j8'
@@ -66,13 +50,14 @@ alias gb='git branch'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gd='git diff'
-alias git-amend='git commit --amend -C HEAD'
-alias git-count='git shortlog -sn'
-alias git-credit='git commit --amend --auth "$1 <$2>" -C HEAD'
-alias git-status='git status -sb'
-alias git-undo='git reset --soft HEAD~'
-alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gp='git push'
-alias gs='git status'
-alias gup='git fetch origin master; git rebase origin/master'
-alias guph='branch_name=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3); git fetch origin `echo $branch_name`; git rebase origin/`echo $branch_name`'
+
+git() {
+	case $1 in
+	log)
+	  shift
+	  command git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit "$@"
+	  ;;
+	*)
+	  command git "$@";;
+	esac
+}
