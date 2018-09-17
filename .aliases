@@ -17,11 +17,19 @@ alias search='find . -maxdepth 1 -type f | xargs grep -in --color=always '
 # MongoDB
 alias mtail='tail -f /data/db/current/mongod.log'
 
-# List all files colorized in long format
-alias ls="ls -lh --color"
-alias lsh="ls -lah --color"
-alias lsf='ls -lah --color | grep "^-"'
-alias lsd='ls -lah --color | grep "^d"'
+# GNU Overrides
+alias awk="gawk"
+alias find="gfind"
+alias grep="ggrep"
+alias sed="gsed"
+alias tar="gtar"
+alias xargs="gxargs"
+
+# List all files colorized in long format (requries coreutils)
+alias ls="gls -lh --color"
+alias lsh="gls -lah --color"
+alias lsf='gls -lah --color | grep "^-"'
+alias lsd='gls -lah --color | grep "^d"'
 
 # IP addresses
 alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -50,6 +58,7 @@ alias gb='git branch'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gd='git diff'
+alias gs='git status'
 
 git() {
 	case $1 in
