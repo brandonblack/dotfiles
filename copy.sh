@@ -5,4 +5,9 @@ for file in .{zshrc,aliases,curlrc,exports,functions,gitconfig,gemrc,pryrc,tmux.
 done
 unset file
 
+if [ ! -f ~/.work ]; then
+  echo "Copying .work..."
+  cp .work ~/
+fi
+
 echo "[DONE]\n"

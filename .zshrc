@@ -62,7 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git git-extras git-flow osx heroku rsync tmux npm node virtualenv virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/.{exports,aliases,functions}; do
+for file in ~/.{exports,aliases,functions,work}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
