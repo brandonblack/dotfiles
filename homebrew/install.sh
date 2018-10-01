@@ -9,7 +9,7 @@ brew install findutils coreutils
 brew install grep gnu-tar gnu-sed gawk
 
 # Install default brew packages
-brew install ack ctop direnv dnsmasq docker-squash git htop hub nginx nvm parallel pigz pinentry-mac python python3 rbenv terminal-notifier tmux tree
+brew install ack bettercap ctop direnv dnsmasq docker-squash git htop hub nginx nvm parallel pigz pinentry-mac python python3 rbenv terminal-notifier tmux tree
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew cask install graphiql
