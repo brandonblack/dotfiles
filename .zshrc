@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

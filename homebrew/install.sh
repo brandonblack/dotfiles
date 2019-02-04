@@ -9,9 +9,11 @@ brew install findutils coreutils
 brew install grep gnu-tar gnu-sed gawk
 
 # Install default brew packages
-brew install ack bettercap ctop direnv dnsmasq docker-squash git htop hub jq nginx nvm parallel pigz pinentry-mac python python3 rbenv terminal-notifier tmux tree yq
+brew install ack bettercap ctop direnv dnsmasq docker-squash git htop hub jq krew kubectx nginx nvm parallel pigz pinentry-mac python python3 rbenv terminal-notifier tmux tree yq
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew cask install graphiql
 brew cask install minikube
+brew tap wagoodman/dive
+brew install dive
 brew cleanup
