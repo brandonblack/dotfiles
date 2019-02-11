@@ -54,17 +54,19 @@ alias bv='bundle viz'
 
 # Git
 alias git=hub
-alias gb='git branch'
+alias gb='gitin branch'
+alias gbr='gitin branch --remote'
+alias gba='gitin branch --all'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gd='git diff'
-alias gs='git status'
+alias gs='gitin status'
 
 git() {
 	case $1 in
 	log)
 	  shift
-	  command git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit "$@"
+	  command gitin log --max-count=30 "$@"
 	  ;;
 	*)
 	  command git "$@";;

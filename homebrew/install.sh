@@ -13,7 +13,18 @@ brew install ack bettercap ctop direnv dnsmasq docker-squash git htop hub jq kre
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew cask install graphiql
-brew cask install minikube
+
+# docker-related tooling
 brew tap wagoodman/dive
 brew install dive
+
+# git-related tooling
+brew tap isacikgoz/gitin
+brew install gitin
+
+# kubernetes-related tooling
+brew cask install minikube
+brew tap derailed/k9s
+brew install k9s
+
 brew cleanup
