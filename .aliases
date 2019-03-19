@@ -53,7 +53,7 @@ alias be='bundle exec'
 alias bv='bundle viz'
 
 # Git
-alias git=hub
+alias git=$(brew --prefix)/bin/hub
 alias gb='gitin branch'
 alias gbr='gitin branch --remote'
 alias gba='gitin branch --all'
