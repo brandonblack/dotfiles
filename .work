@@ -1,1 +1,10 @@
-# work specific stuff here
+if [[ -f ~/.npmrc ]]; then
+    export HONEY_NPM_TOKEN=`awk -F'=' '{print $2}' < ~/.npmrc`
+fi
+
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+
+alias glcoud=gcloud
