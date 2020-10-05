@@ -13,6 +13,7 @@ brew install ack bettercap ctop direnv dnsmasq docker-squash git htop hub jq kre
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew cask install graphiql
+brew install muesli/tap/duf
 
 # docker-related tooling
 brew tap wagoodman/dive
